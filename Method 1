@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+int i,j,r,count,count1;                      //declaring integer variables i,j for loops , r for number of rows and count for increment in value
+count=0;                                     //initialising count
+printf("Enter the number of rows :\n");      //Asking user for input
+scanf("%d",&r);                              //taking number of rows and saving it in variable r
+for(i=1;i<=r;i++)                            //loop to calculate max value of count
+  {
+    count+=i;                                //incrementing count
+  }
+for(i=0;i<r;i++)                             // loop for number of rows
+  {
+    count=count-r+i;                         //changing value of count 
+    count1=count;                            //giving value of count to count1
+    for(j=r;j>i;j--)                         // loop for digits per each row
+     {
+       count++;                              //incrementing count
+       if(j!=r)                              //if condition to print star and digit
+       printf("*%d",count);                  //printng star and digit
+       else                                  //else condition to print only digit
+       printf("%d",count);                   //printing digits
+     }
+    printf("\n");                            //printing newline
+    count =count1;                            // giving count its original value
+  }
+}
